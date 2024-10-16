@@ -1,0 +1,154 @@
+/* تنسيقات عامة للصفحة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000; /* خلفية سوداء */
+    color: #f5f5f5; /* لون النص */
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(45deg, #1c1c1c, #282828); /* تدرج جميل للهيدر */
+    color: #ffcc00; /* لون النص في الهيدر */
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 3rem; /* حجم كبير لعنوان الصفحة */
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+main {
+    max-width: 1200px; /* عرض أقصى للماين */
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* تنسيق قائمة الأنمي */
+.anime-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* تنسيق كل عنصر أنمي */
+.anime-item {
+    background-color: #202020; /* لون خلفية العنصر */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 280px; /* عرض ثابت للعناصر */
+    text-align: center;
+    border: 2px solid #ffcc00; /* لون الحدود */
+}
+
+/* التأكيد على أن الصور بنفس الحجم */
+.anime-item img {
+    width: 100%;
+    height: 300px; /* جعل ارتفاع الصور ثابتًا */
+    object-fit: cover; /* الحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+/* إضافة تأثير عند تمرير الفأرة على عنصر الأنمي */
+.anime-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+}
+
+/* تنسيق العناوين والوصف */
+.anime-item h2 {
+    font-size: 1.8rem; /* حجم عنوان الأنمي */
+    color: #ffcc00; /* لون العنوان */
+    margin: 15px 0 10px;
+}
+
+.anime-item p {
+    padding: 0 10px;
+    font-size: 1rem; /* حجم وصف الأنمي */
+    color: #cccccc; /* لون وصف الأنمي */
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* زر تحميل المزيد من الأنمي */
+.load-more {
+    display: block;
+    background-color: #ffcc00; /* لون الزر */
+    color: #1c1c1c; /* لون النص في الزر */
+    padding: 12px 25px;
+    margin: 20px auto;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 200px; /* عرض ثابت للزر */
+    transition: background-color 0.3s ease;
+}
+
+.load-more:hover {
+    background-color: #e6b800; /* لون الزر عند التمرير */
+    cursor: pointer;
+}
+
+/* تنسيق الفوتر */
+footer {
+    background-color: #1c1c1c; /* لون خلفية الفوتر */
+    color: #f5f5f5; /* لون النص في الفوتر */
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* تنسيق استجابة الموقع للأجهزة المختلفة */
+@media (max-width: 1200px) {
+    .anime-list {
+        justify-content: center; /* توسيط العناصر في الشاشات الصغيرة */
+    }
+}
+
+@media (max-width: 600px) {
+    .anime-list {
+        flex-direction: column; /* عرض العناصر بشكل عمودي */
+        align-items: center; /* توسيط العناصر */
+    }
+
+    .anime-item {
+        width: 90%; /* جعل العنصر ملء العرض */
+        max-width: 350px; /* تحديد حد أقصى للعرض */
+        margin: 10px 0; /* تقليل المسافة بين العناصر */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* تقليل حجم الخط في الشاشات الصغيرة */
+    }
+
+    .anime-item img {
+        height: 250px; /* تقليل ارتفاع الصور لتناسب الشاشات الصغيرة */
+    }
+
+    .anime-item h2 {
+        font-size: 1.5rem; /* تقليل حجم عنوان الأنمي */
+    }
+
+    .anime-item p {
+        font-size: 0.9rem; /* تقليل حجم وصف الأنمي */
+    }
+
+    .load-more {
+        width: 80%; /* جعل الزر أكبر على الشاشات الصغيرة */
+        max-width: 200px; /* تحديد حد أقصى للزر */
+    }
+}
